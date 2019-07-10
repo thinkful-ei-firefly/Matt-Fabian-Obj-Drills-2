@@ -47,3 +47,32 @@ const findById = (items, id) => {
 const data = [{ id: 1, foo: "bar" }, { id: 2, foo: "bizz" }];
 
 console.log(findById(data, 2));
+
+//--------------------------------------
+
+const objectA = {
+  id: 2,
+  name: 'Jane Doe',
+  age: 34,
+  city: 'Chicago',
+};
+
+const objectB = {
+  id: 3,
+  age: 33,
+  city: 'Peoria',
+};
+
+const expectedKeys = ['id', 'name', 'age', 'city'];
+
+function validateKeys(object, expectedKeys) {
+  // your code goes here
+  if (Object.keys(object).length !== expectedKeys.length) return false;
+  for ( key in object){
+  	if (!expectedKeys.includes(key)) return false;
+  }
+  return true;
+}
+
+console.log(validateKeys(objectA, expectedKeys))
+
